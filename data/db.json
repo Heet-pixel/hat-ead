@@ -1,0 +1,102 @@
+{
+  "clients": [
+    {
+      "id": "4b3cc52c-6dd3-49f1-b8ef-ecf35621b050",
+      "createdAt": "2026-09-25T09:28:11.503Z",
+      "name": "Natura — Botanical Skincare",
+      "website": "/work/natura/",
+      "type": "E-commerce",
+      "status": "Completed",
+      "show": true,
+      "progress": 100,
+      "description": "A premium botanical-skincare storefront with an interactive 3D product viewer, animated scroll reveals and a full shopping flow.",
+      "tech": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Three.js"
+      ],
+      "services": [
+        "E-Commerce",
+        "Portfolio & Creative Sites"
+      ]
+    }
+  ],
+  "inquiries": [],
+  "languages": [
+    {
+      "id": "13a30c60-aa27-455e-9d2d-a9cacf04466d",
+      "name": "React",
+      "category": "Frontend",
+      "note": ""
+    },
+    {
+      "id": "7f5e83c9-c682-4fb9-b9d8-645bd6f9660b",
+      "name": "Next.js",
+      "category": "Frontend",
+      "note": ""
+    },
+    {
+      "id": "cf91d7ed-a2b9-4c4e-86a5-9ef5d3291670",
+      "name": "Tailwind CSS",
+      "category": "Frontend",
+      "note": ""
+    },
+    {
+      "id": "866df7a8-74e9-401a-a15a-fad6271858b3",
+      "name": "Node.js",
+      "category": "Backend",
+      "note": ""
+    },
+    {
+      "id": "b9a7659d-5c5c-4e4d-8edd-3154ca371957",
+      "name": "Express",
+      "category": "Backend",
+      "note": ""
+    },
+    {
+      "id": "a831914e-00ee-4085-b965-226eed8fcb5a",
+      "name": "MongoDB",
+      "category": "Database",
+      "note": ""
+    },
+    {
+      "id": "2920d303-f3b6-450d-9f57-e807d9520c27",
+      "name": "PostgreSQL",
+      "category": "Database",
+      "note": ""
+    }
+  ],
+  "services": [
+    {
+      "id": "aee1ef7e-5e8b-402f-8f7f-00a69e4498f5",
+      "name": "Business Websites",
+      "description": ""
+    },
+    {
+      "id": "31c6498e-2dd4-4761-84d6-ca71905d7d23",
+      "name": "E-Commerce",
+      "description": ""
+    },
+    {
+      "id": "5879f907-5450-49ea-9ff9-8419e85af1bc",
+      "name": "SaaS Platforms",
+      "description": ""
+    },
+    {
+      "id": "4572ce08-7f0a-498a-98f1-4e39ac42780b",
+      "name": "Web Applications",
+      "description": ""
+    },
+    {
+      "id": "ecba7048-9509-43db-976a-459a36690ee8",
+      "name": "Custom Software",
+      "description": ""
+    },
+    {
+      "id": "f4dd6813-dd75-422a-b95f-5a95d4a768e7",
+      "name": "Admin Dashboards",
+      "description": ""
+    }
+  ]
+}

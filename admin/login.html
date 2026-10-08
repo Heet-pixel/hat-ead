@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>HAT Admin — Sign in</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin-assets/admin.css"></head>
+<body><main class="login"><form class="login-card" id="f" autocomplete="on">
+<div class="logo gt">HAT</div><p class="sub">Sign in to your admin dashboard</p>
+<div class="field"><label for="e">Email</label><input id="e" type="email" name="email" placeholder="you@example.com" required autofocus></div>
+<div class="field"><label for="p">Password</label><input id="p" type="password" name="password" placeholder="••••••••" required></div>
+<div class="lock" id="lock" hidden></div>
+<div class="err" id="err" role="alert"></div>
+<button class="btn" id="b" type="submit">Sign in →</button></form></main>
+<script>
+const $ = (id) => document.getElementById(id);
+function lockUI(until) {
+  const box = $('lock');
+  box.hidden = false;
+  box.textContent = '🔒 Too many failed attempts. Admin access is locked until ' + new Date(until).toLocaleString() + ' (24 hours).';
+  ['e', 'p', 'b'].forEach((id) => { $(id).disabled = true; });
+  $('err').textContent = '';
+}
+fetch('/api/admin/status').then((r) => r.json()).then((s) => { if (s.locked) lockUI(s.until); }).catch(() => {});
+$('f').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  $('err').textContent = ''; $('b').disabled = true;
+  try {
+    const r = await fetch('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: $('e').value, password: $('p').value }) });
+    const j = await r.json();
+    if (r.ok) return location.replace('/admin');
+    if (j.locked) return lockUI(j.until);
+    $('err').textContent = j.error || 'Sign in failed.'; $('p').value = '';
+  } catch { $('err').textContent = 'Network error. Try again.'; }
+  $('b').disabled = false;
+});
+</script></body></html>
